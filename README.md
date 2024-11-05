@@ -18,5 +18,5 @@ Debouncing
 
  Debouncing with 200ms
   - if difference between two key strokes is less than <200ms - not call the api, decline the api call
-  - if it is greater than > 200ms -  call the api 
+  - if it is greater than > 200ms -  call the api  
 # youtubeCloneAk
