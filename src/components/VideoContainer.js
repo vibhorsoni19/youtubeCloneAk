@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { YOUTUBE_VIDEO_API } from "../utils/Constant";
 import VideoCard ,{RedBorderVideoCard} from "./VideoCard";
 import { Link } from "react-router-dom";
+import Loader from "./Loader";
 
-const VideoContainer = () => {
+const VideoContainer = ({info}) => {
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -25,7 +26,7 @@ const VideoContainer = () => {
     <div className="flex flex-wrap">
       {videos[0] && <RedBorderVideoCard info={videos[0]}/>}
       {loading ? (
-        <p>Loading videos...</p>
+        <Loader info={info}/>
       ) : (
         videos?.map((video) => (
           <Link to={"/watch?v=" + video.id} key={video.id}>

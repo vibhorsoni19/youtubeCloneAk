@@ -59,7 +59,6 @@ const Head = () => {
 
   const getSearchSuggestions = async () => {
     try {
-      console.log("api call")
       const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
       const json = await data.json();
       setSuggestion(json[1]);
@@ -68,7 +67,6 @@ const Head = () => {
       dispatch(cacheResults({
         [searchQuery]:json[1]
       }));
-      console.log(json);
     } catch (error) {
       console.log(error);
     }
